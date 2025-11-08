@@ -74,6 +74,36 @@ const sendEmail = (e) =>{
 
 contactForm.addEventListener('submit', sendEmail)
 
+
+/*=============== Swiper JS ===============*/ 
+
+
+let swiperProjects = new Swiper(".projects__container", {
+      loop: true,
+      spaceBetween: 24,
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    breakpoints: {
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+
+        1150: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        
+    },
+});
+
+
 /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () =>{
     const scrollUp = document.getElementById('scroll-up')
@@ -145,8 +175,8 @@ const sr = ScrollReveal({
 })
 
 sr.reveal('.home__perfil, .about__image, .contact__mail', {origin: 'right'})
-sr.reveal('.home__name, .home__info, .about__container .section__title-1, .about__info, .contact__social, .contact__data', {origin: 'left'})
-sr.reveal('.services__card, .projects__card', {interval: 100})
+sr.reveal('.home__name, .projects__container, .home__info, .about__container .section__title-1, .about__info, .contact__social, .contact__data', {origin: 'left'})
+sr.reveal('.services__card,  .experience__card, .experience__timeline', {interval: 100})
 
 
 
