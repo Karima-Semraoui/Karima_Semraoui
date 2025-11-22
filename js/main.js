@@ -40,6 +40,29 @@ const shadowHeader = () =>{
 }
 window.addEventListener('scroll', shadowHeader)
 
+
+
+/*=============== Experiences tabs ===============*/
+const tabs = document.querySelectorAll('[data-target]'),
+        tabContents = document.querySelectorAll('[data-content]')
+
+tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        const targetSelector = tab.dataset.target,
+             targetContent = document.querySelector(targetSelector)
+
+        // disable all contents and activate tabs
+        tabContents.forEach((content) => content.classList.remove('experience-active'))
+        tabs.forEach((t) => t.classList.remove('experience-active'))
+
+        // activate the tab and corresponding content
+        tab.classList.add('experience-active')
+        targetContent.classList.add('experience-active')
+    })
+})
+
+
+
 /*=============== EMAIL JS ===============*/
 
 const contactForm = document.getElementById('contact-form'),
@@ -176,7 +199,20 @@ const sr = ScrollReveal({
 
 sr.reveal('.home__perfil, .about__image, .contact__mail', {origin: 'right'})
 sr.reveal('.home__name, .projects__container, .home__info, .about__container .section__title-1, .about__info, .contact__social, .contact__data', {origin: 'left'})
-sr.reveal('.services__card,  .experience__card, .experience__timeline', {interval: 100})
+sr.reveal('.services__card, .experience__area, .experience__tabs, .experience__timeline', {interval: 100})
+
+/*=============== popup model ===============*/
+/*const projectInfo = document.getElementById('project-info');
+const projectclose = document.getElementById('project-close');
+const model = document.getElementById('model');
+
+projectInfo.addEventListener('click', () => {
+    model.classList.add("open");
+});
+
+projectclose.addEventListener('click', () => {
+    model.classList.remove("open");
+});*/
 
 
 
